@@ -1,0 +1,373 @@
+:root {
+    --bg-primary: #000000;
+    --bg-secondary: #0a0a0a;
+    --text-primary: #e0e0e0;
+    --text-secondary: #808080;
+    --accent: #a8a8a8;
+    --accent-dim: #404040;
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'IBM Plex Mono', monospace;
+}
+
+body {
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.7;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+/* Navigation Styles */
+nav {
+    position: fixed;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.98);
+    backdrop-filter: blur(10px);
+    z-index: 100;
+    border-bottom: 1px solid var(--accent-dim);
+}
+
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+}
+
+.nav-brand {
+    display: flex;
+    align-items: center;
+}
+
+.brand-link {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    text-decoration: none;
+    color: var(--text-primary);
+    transition: var(--transition);
+}
+
+.brand-link:hover {
+    opacity: 0.8;
+}
+
+.logo {
+    font-size: 1.5rem;
+    color: var(--accent);
+}
+
+.brand-text {
+    font-size: 1.6rem;
+    letter-spacing: 0.1em;
+    font-weight: 500;
+}
+
+.nav-links {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+}
+
+.nav-link {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.85rem;
+    letter-spacing: 0.2em;
+    transition: var(--transition);
+    position: relative;
+    padding: 5px 0;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background: var(--accent);
+    transition: var(--transition);
+}
+
+.nav-link:hover {
+    color: var(--text-primary);
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.nav-link.apply-button {
+    color: var(--text-primary);
+    background: var(--accent-dim);
+    border: none;
+    padding: 8px 20px;
+    border-radius: 2px;
+    transition: var(--transition);
+}
+
+.nav-link.apply-button:hover {
+    background: var(--accent);
+    color: var(--bg-primary);
+}
+
+.nav-link.apply-button::after {
+    display: none;
+}
+
+/* Hero Section */
+.hero {
+    min-height: 100vh;
+    padding: 120px 0 80px;
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+}
+
+.hero::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 50% 50%, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+    opacity: 0.7;
+    z-index: -1;
+}
+
+.hero-content {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+h1 {
+    font-size: 1.8rem;
+    margin-bottom: 3rem;
+    line-height: 1.4;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    color: var(--text-primary);
+}
+
+p {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    margin-bottom: 1.8rem;
+    letter-spacing: 0.05em;
+}
+
+.emphasis {
+    color: var(--text-primary);
+    font-weight: 400;
+}
+
+/* Tab Styles */
+.tab-container {
+    margin-top: 40px;
+}
+
+.tabs {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 40px;
+    border-bottom: 1px solid var(--accent-dim);
+    padding-bottom: 15px;
+}
+
+.tab {
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    cursor: pointer;
+    font-size: 0.85rem;
+    letter-spacing: 0.2em;
+    transition: var(--transition);
+    padding: 10px 0;
+    font-family: 'IBM Plex Mono', monospace;
+    position: relative;
+}
+
+.tab::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: -16px;
+    left: 0;
+    background: var(--accent);
+    transition: var(--transition);
+}
+
+.tab:hover {
+    color: var(--text-primary);
+}
+
+.tab.active {
+    color: var(--text-primary);
+}
+
+.tab.active::after {
+    width: 100%;
+}
+
+.tab-content {
+    display: none;
+    animation: fadeIn 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* FAQ Styles */
+.faq-section {
+    margin-top: 40px;
+}
+
+.faq-section p {
+    margin-bottom: 40px;
+}
+
+/* CTA Button */
+.cta-button {
+    display: block;
+    padding: 15px 40px;
+    margin: 40px auto 0;
+    width: fit-content;
+    background: var(--accent-dim);
+    border: none;
+    color: var(--text-primary);
+    text-decoration: none;
+    letter-spacing: 0.2em;
+    font-size: 0.85rem;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+
+.cta-button:hover {
+    background: var(--accent);
+    color: var(--bg-primary);
+}
+
+.cta-button::before {
+    display: none;
+}
+
+.hero-content > .register-button {
+    margin: 0 auto 3rem;
+    background: var(--accent-dim);
+    color: var(--text-primary);
+}
+
+.hero-content > .register-button:hover {
+    background: var(--accent);
+    color: var(--bg-primary);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { 
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to { 
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .nav-links {
+        gap: 30px;
+    }
+
+    .container {
+        padding: 0 20px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .tabs {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-links {
+        gap: 20px;
+    }
+    
+    .nav-link {
+        font-size: 0.75rem;
+    }
+}
+
+/* Update logo styles */
+.logo-img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+}
+
+.brand-link {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    text-decoration: none;
+    color: var(--text-primary);
+    transition: var(--transition);
+}
+
+.brand-link:hover {
+    opacity: 0.8;
+}
+
+.brand-text {
+    font-size: 1.6rem;
+    letter-spacing: 0.1em;
+    font-weight: 500;
+}
+
+/* Update register button styles for new position */
+.hero-content > .register-button {
+    margin: 0 auto 3rem;
+}
+
+/* Remove the button group styles since we're not using them anymore */
+.button-group {
+    display: none;
+}
+
+/* Add these new styles for the contact page */
+.calendly-container {
+    margin-top: 40px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 4px;
+    padding: 20px;
+}
+
+.email-button {
+    margin: 40px auto 0;
+}
+ 
