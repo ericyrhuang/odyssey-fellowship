@@ -17,7 +17,7 @@
 
 body {
     background: var(--bg-primary);
-    color: var(--text-primary);
+    color: #808080;
     line-height: 1.7;
     overflow-x: hidden;
     min-height: 100vh;
@@ -82,7 +82,7 @@ nav {
 }
 
 .nav-link {
-    color: var(--text-secondary);
+    color: #808080;
     text-decoration: none;
     font-size: 0.85rem;
     letter-spacing: 0.2em;
@@ -103,7 +103,7 @@ nav {
 }
 
 .nav-link:hover {
-    color: var(--text-primary);
+    color: #404040;
 }
 
 .nav-link:hover::after {
@@ -167,7 +167,7 @@ h1 {
 
 p {
     font-size: 1rem;
-    color: var(--text-secondary);
+    color: #808080;
     margin-bottom: 1.8rem;
     letter-spacing: 0.05em;
 }
@@ -311,6 +311,15 @@ p {
     .tabs {
         gap: 20px;
     }
+
+    .logo-img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .brand-text {
+        font-size: 1.2rem;
+    }
 }
 
 @media (max-width: 480px) {
@@ -320,6 +329,19 @@ p {
     
     .nav-link {
         font-size: 0.75rem;
+    }
+
+    .logo-img {
+        width: 32px;
+        height: 32px;
+    }
+
+    .brand-text {
+        font-size: 1rem;
+    }
+
+    .nav-content {
+        padding: 10px 0;
     }
 }
 
