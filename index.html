@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Odyssey Fellowship: A 9-month program for exceptional individuals seeking to discover their life's work through intellectual exploration and meaningful projects.">
+    <meta name="keywords" content="odyssey fellowship, intellectual collective, talent development, fellowship program, research fellowship, innovation program">
+    <meta property="og:title" content="Odyssey Fellowship | Discover Your Life's Work">
+    <meta property="og:description" content="A fellowship for the underestimated. We give you freedom, resources, and privacy to pursue mastery of the established and the discovery of the heretical.">
+    <meta property="og:image" content="assets/logo.jpg">
+    <meta property="og:url" content="https://odyssey-fellowship.com">
+    <meta name="twitter:card" content="summary_large_image">
+    <title>Odyssey Fellowship | Discover Your Life's Work</title>
+    <link rel="icon" type="image/jpeg" href="assets/logo.jpg">
+    <link rel="apple-touch-icon" href="assets/logo.jpg">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <div class="container nav-content">
+            <div class="nav-brand">
+                <a href="index.html" class="brand-link">
+                    <img src="assets/logo.jpg" alt="Odyssey Fellowship Logo" class="logo-img">
+                    <span class="brand-text">Odyssey Fellowship</span>
+                </a>
+            </div>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">HOME</a>
+                <a href="faq.html" class="nav-link">FAQ</a>
+                <a href="contact.html" class="nav-link">CONTACT</a>
+                <a href="https://airtable.com/apptd9PipPIX7aWon/pagjBHac1C8uH7RFs/form" target="_blank" class="nav-link apply-button">APPLY</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="hero">
+            <div class="container hero-content">
+                <h1>A fellowship for the underestimated. We give you freedom, resources, and privacy to pursue mastery of the established and the discovery of the heretical.</h1>
+                
+                <a href="https://airtable.com/appN3CRYMddXKZu1C/paguDN46xTCycDxT0/form" target="_blank" class="cta-button register-button">REGISTER INTEREST</a>
+                
+                <div class="tab-container">
+                    <div class="tabs">
+                        <button class="tab active" onclick="openTab(event, 'home')">MANIFESTO</button>
+                        <button class="tab" onclick="openTab(event, 'about')">YOU</button>
+                        <button class="tab" onclick="openTab(event, 'curriculum')">CURRICULUM</button>
+                    </div>
+
+                    <div id="home" class="tab-content active">
+                        <p>Few things matter more than what the world's most talented individuals do with their lives. Unfortunately, discovering the path which will lead them to the right life's work is seldom straightforward, and the process is too often hampered by institutions which promise clarity and direction only to deliver a narrow list of sanitised options.</p>
+                        
+                        <p>Even for those individuals who resist the dampening pressures the world throws on the ambitious and the weird, transforming fuzzy aspirations into concrete action on one's own is a painful process prone to failure because <span class="emphasis">the expression of talent is fundamentally social</span>.</p>
+                        
+                        <p>The right peers hold you accountable, egg you on, raise your aspirations, and ultimately enable you to progress. But forming such a peer group is rare and difficult, even when embedded within institutions which gather the world's smartest and most ambitious people.</p>
+                        
+                        <p>Instead, it happens in Café Guerbois, after hours in room 20E-214, or late into the night at the Eagle and Child pub. These are spaces where bad ideas, incomplete thoughts, and cringe obsessions are taken seriously, allowed to be explored and played with.</p>
+                        <a href="https://airtable.com/apptd9PipPIX7aWon/pagjBHac1C8uH7RFs/form" target="_blank" class="cta-button">APPLY NOW</a>
+                    </div>
+
+                    <div id="about" class="tab-content">
+                        <p><span class="emphasis">You want to pursue big, meaningful work.</span> You have been searching for the right environment and field in which to apply this ambition, but you still find yourself uncertain about whether you're on the right path.</p>
+                        
+                        <p>You've proven to yourself that you can take on challenging ideas and problems, and you're eager to find ways to use this ability in service of real goals, instead of artificial ones.</p>
+                        
+                        <p>You frequently find yourself excited about topics which most people (including a plurality of your peers) don't seem to fully understand, and you find it occasionally difficult to explain your interests.</p>
+                        
+                        <p><span class="emphasis">You have high expectations for yourself and the people around you.</span> You want to confront your ideas and ideals to reality.</p>
+                        <a href="https://airtable.com/apptd9PipPIX7aWon/pagjBHac1C8uH7RFs/form" target="_blank" class="cta-button">APPLY NOW</a>
+                    </div>
+
+                    <div id="curriculum" class="tab-content">
+                        <p><span class="emphasis">Deep Historical Analysis</span></p>
+                        <p>The curriculum is a deep dive into the very early days of some of the groups and movements which have come to define our present. From our privileged position, their visions for the future seem obvious; we regularly fail to remember that the edifices they built over decades or millennia started as messy projects pursued by marginal people.</p>
+                        
+                        <p><span class="emphasis">Programme Structure</span></p>
+                        <p>• First 3 months: Weekly meetings and curriculum exploration<br>
+                        • Following 6 months: Free rein for your projects<br>
+                        • Regular standing get-togethers and dinners<br>
+                        • Dedicated Community Leaders for guidance</p>
+                        
+                        <p><span class="emphasis">Learning Approach</span></p>
+                        <p>Our curriculum combines structured learning with practical application. You'll engage with foundational texts while developing your own projects and ideas in a supportive environment.</p>
+                        <a href="https://airtable.com/apptd9PipPIX7aWon/pagjBHac1C8uH7RFs/form" target="_blank" class="cta-button">APPLY NOW</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        function openTab(evt, tabName) {
+            const tabContents = document.getElementsByClassName("tab-content");
+            for (let content of tabContents) {
+                content.classList.remove("active");
+            }
+
+            const tabs = document.getElementsByClassName("tab");
+            for (let tab of tabs) {
+                tab.classList.remove("active");
+            }
+
+            document.getElementById(tabName).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+    </script>
+</body>
+</html>
