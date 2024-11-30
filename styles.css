@@ -392,4 +392,9 @@ p {
 .email-button {
     margin: 40px auto 0;
 }
+
+a {
+    text-decoration: underline;
+    color: white;
+}
  
