@@ -401,31 +401,53 @@ a {
 /* Add these media queries for mobile responsiveness */
 @media screen and (max-width: 768px) {
     .nav-content {
-        flex-direction: column;
+        flex-direction: row;
+        justify-content: space-between;
         align-items: center;
-        padding: 1rem;
+        padding: 0.5rem 1rem;
+        flex-wrap: wrap;
     }
 
     .nav-links {
-        flex-direction: column;
-        width: 100%;
-        text-align: center;
-        margin-top: 1rem;
+        flex-direction: row;
+        gap: 15px;
+        margin-top: 0;
     }
 
     .nav-link {
-        display: block;
-        padding: 0.5rem 0;
-        margin: 0.25rem 0;
+        font-size: 0.75rem;
+        padding: 0.25rem 0;
+    }
+
+    .brand-text {
+        font-size: 1rem;
+    }
+
+    .logo-img {
+        width: 32px;
+        height: 32px;
     }
 
     .apply-button {
-        margin: 0.5rem 0;
-        display: inline-block;
+        padding: 6px 12px;
+        font-size: 0.75rem;
     }
 
-    .brand-link {
-        margin-bottom: 0.5rem;
+    .dropdown-content {
+        right: 0;
+        left: auto;
+        transform: none;
+    }
+}
+
+/* For very small screens */
+@media screen and (max-width: 480px) {
+    .nav-links {
+        gap: 10px;
+    }
+
+    .brand-text {
+        display: none;
     }
 }
 
@@ -561,5 +583,19 @@ a {
         transform: none;
         width: 100%;
     }
+}
+
+/* Add styles for the applications notice and center register button */
+.applications-notice {
+    text-align: center;
+    color: var(--text-primary);
+    margin: 40px 0 20px;
+    font-size: 1.1rem;
+}
+
+.register-button {
+    display: block;
+    margin: 20px auto 0;
+    width: fit-content;
 }
  
