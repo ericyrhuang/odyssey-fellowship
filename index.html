@@ -23,6 +23,8 @@
     gtag('js', new Date());
 
     gtag('config', 'G-1BL1JQVNCK');
+    gtag('config', 'AW-16807208314');
+
     </script>
 </head>
 <body>
@@ -39,10 +41,10 @@
                 <a href="faq.html" class="nav-link">FAQ</a>
                 <a href="contact.html" class="nav-link">CONTACT</a>
                 <div class="nav-link apply-dropdown">
-                    <button class="apply-button">APPLY</button>
+                    <button id="applyButton" class="apply-button">APPLY</button>
                     <div class="dropdown-content">
-                        <a href="https://airtable.com/apptd9PipPIX7aWon/pagjBHac1C8uH7RFs/form" target="_blank">Oxford</a>
-                        <a href="https://airtable.com/appsFSjct9YT7kvGp/pagx4AZ3oOShHmuaG/form" target="_blank">Cambridge</a>
+                        <a id="applyOxford" href="https://airtable.com/apptd9PipPIX7aWon/pagjBHac1C8uH7RFs/form" target="_blank">Oxford</a>
+                        <a id="applyCambridge" href="https://airtable.com/appsFSjct9YT7kvGp/pagx4AZ3oOShHmuaG/form" target="_blank">Cambridge</a>
                     </div>
                 </div>
             </div>
@@ -54,7 +56,7 @@
             <div class="container hero-content">
                 <h1>A fellowship for the restless. We give you freedom, resources, and privacy to pursue mastery of the established and the discovery of the heretical.</h1>
                 
-                <a href="https://airtable.com/appN3CRYMddXKZu1C/paguDN46xTCycDxT0/form" target="_blank" class="cta-button register-button">REGISTER INTEREST</a>
+                <a id="registerInterest1" href="https://airtable.com/appN3CRYMddXKZu1C/paguDN46xTCycDxT0/form" target="_blank" class="cta-button register-button">REGISTER INTEREST</a>
                 
                 <div class="tab-container">
                     <div class="tabs">
@@ -81,7 +83,7 @@
                         <p><span class="emphasis">Odyssey is a part-time programme which rewards serious and committed participation.</span> While we're eager to help you start a company if that is the path you choose, <span class="emphasis">Odyssey is not an entrepreneurship programme.</span> We are here to help you find your life's work, whatever it turns out to look like.</p>
                         
                         <p class="applications-notice">Applications now open for 2025 fellows in Oxford and Cambridge</p>
-                        <a href="https://airtable.com/appN3CRYMddXKZu1C/paguDN46xTCycDxT0/form" target="_blank" class="cta-button register-button">REGISTER INTEREST</a>
+                        <a id="registerInterest2" href="https://airtable.com/appN3CRYMddXKZu1C/paguDN46xTCycDxT0/form" target="_blank" class="cta-button register-button">REGISTER INTEREST</a>
                     </div>
 
                     <div id="about" class="tab-content">
@@ -94,7 +96,7 @@
                         <p><span class="emphasis">You have high expectations for yourself and the people around you.</span> You want to confront your ideas and ideals to reality.</p>
                         
                         <p class="applications-notice">Applications now open for 2025 fellows in Oxford and Cambridge</p>
-                        <a href="https://airtable.com/appN3CRYMddXKZu1C/paguDN46xTCycDxT0/form" target="_blank" class="cta-button register-button">REGISTER INTEREST</a>
+                        <a id="registerInterest3" href="https://airtable.com/appN3CRYMddXKZu1C/paguDN46xTCycDxT0/form" target="_blank" class="cta-button register-button">REGISTER INTEREST</a>
                     </div>
 
                     <div id="curriculum" class="tab-content">
@@ -103,7 +105,7 @@
                         <p>Over the first 11 weeks of the fellowship, we will be meeting as a group to discuss the ways our distance from the past might mislead us about our ability to impact the future. Our exploration of the early days of the Enlightenment, the arrival of the Counterculture, and the emergence of Cyberculture will give us stories, anecdotes, and frames with which to interpret the present, and give you more context and better judgement with which to think about your future.</p>
                         
                         <p class="applications-notice">Applications now open for 2025 fellows in Oxford and Cambridge</p>
-                        <a href="https://airtable.com/appN3CRYMddXKZu1C/paguDN46xTCycDxT0/form" target="_blank" class="cta-button register-button">REGISTER INTEREST</a>
+                        <a id="registerInterest4" href="https://airtable.com/appN3CRYMddXKZu1C/paguDN46xTCycDxT0/form" target="_blank" class="cta-button register-button">REGISTER INTEREST</a>
                     </div>
                 </div>
             </div>
@@ -125,6 +127,55 @@
             document.getElementById(tabName).classList.add("active");
             evt.currentTarget.classList.add("active");
         }
+
+        // Function to track button clicks
+        function trackButtonClick(eventCategory, eventLabel) {
+            gtag('event', 'click', {
+                'event_category': eventCategory,
+                'event_label': eventLabel,
+                'value': 1
+            });
+        }
+
+        // Function to track conversions
+        function trackConversion(conversionLabel) {
+            gtag('event', 'conversion', {
+                'send_to': 'AW-16807208314/' + conversionLabel,
+                'value': 1.0,
+                'currency': 'GBP'
+            });
+        }
+
+        // Add event listeners to buttons
+        document.getElementById('applyOxford').addEventListener('click', function() {
+            trackButtonClick('Apply', 'Oxford');
+            trackConversion('V_XXCOHRp_IZEPrKps4-'); // Replace with actual conversion label for Oxford
+        });
+
+        document.getElementById('applyCambridge').addEventListener('click', function() {
+            trackButtonClick('Apply', 'Cambridge');
+            trackConversion('V_XXCOHRp_IZEPrKps4-'); // Replace with actual conversion label for Cambridge
+        });
+
+        document.getElementById('registerInterest1').addEventListener('click', function() {
+            trackButtonClick('Register Interest', 'Hero Section');
+            trackConversion('V_XXCOHRp_IZEPrKps4-'); // Replace with actual conversion label for Register Interest 1
+        });
+
+        document.getElementById('registerInterest2').addEventListener('click', function() {
+            trackButtonClick('Register Interest', 'About Section');
+            trackConversion('V_XXCOHRp_IZEPrKps4-'); // Replace with actual conversion label for Register Interest 2
+        });
+
+        document.getElementById('registerInterest3').addEventListener('click', function() {
+            trackButtonClick('Register Interest', 'About Section');
+            trackConversion('V_XXCOHRp_IZEPrKps4-'); // Replace with actual conversion label for Register Interest 2
+        });
+
+        document.getElementById('registerInterest4').addEventListener('click', function() {
+            trackButtonClick('Register Interest', 'Curriculum Section');
+            trackConversion('V_XXCOHRp_IZEPrKps4-'); // Replace with actual conversion label for Register Interest 2
+        });
     </script>
 </body>
 </html>
