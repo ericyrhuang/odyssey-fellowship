@@ -16,13 +16,15 @@
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1BL1JQVNCK"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16807208314"></script>
     <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
 
     gtag('config', 'G-1BL1JQVNCK');
+    gtag('config', 'AW-16807208314');
+
     </script>
 </head>
 <body>
@@ -41,8 +43,8 @@
                 <div class="nav-link apply-dropdown">
                     <button class="apply-button">APPLY</button>
                     <div class="dropdown-content">
-                        <a href="https://airtable.com/apptd9PipPIX7aWon/pagjBHac1C8uH7RFs/form" target="_blank">Oxford</a>
-                        <a href="https://airtable.com/appsFSjct9YT7kvGp/pagx4AZ3oOShHmuaG/form" target="_blank">Cambridge</a>
+                        <a id="applyOxford" href="https://airtable.com/apptd9PipPIX7aWon/pagjBHac1C8uH7RFs/form" target="_blank">Oxford</a>
+                        <a id="applyCambridge" href="https://airtable.com/appsFSjct9YT7kvGp/pagx4AZ3oOShHmuaG/form" target="_blank">Cambridge</a>
                     </div>
                 </div>
             </div>
@@ -88,5 +90,25 @@
             </div>
         </section>
     </main>
+
+    <script>
+        // Function to track conversions
+        function trackConversion(conversionLabel) {
+            gtag('event', 'conversion', {
+                'send_to': 'AW-16807208314/' + conversionLabel,
+                'value': 1.0,
+                'currency': 'GBP'
+            });
+        }
+
+        // Add event listeners to buttons
+        document.getElementById('applyOxford').addEventListener('click', function() {
+            trackConversion('conversion_label_for_oxford'); // Replace with actual conversion label for Oxford
+        });
+
+        document.getElementById('applyCambridge').addEventListener('click', function() {
+            trackConversion('conversion_label_for_cambridge'); // Replace with actual conversion label for Cambridge
+        });
+    </script>
 </body>
 </html> 
