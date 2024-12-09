@@ -598,4 +598,8 @@ a {
     margin: 20px auto 0;
     width: fit-content;
 }
+
+.indented-list {
+    padding-left: 20px; /* Adjust the value as needed */
+}
  
