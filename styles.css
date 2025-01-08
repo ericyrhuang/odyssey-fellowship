@@ -1,5 +1,6 @@
+/* Base styles */
 :root {
-    --bg-primary: #000000;
+    --bg-primary:#000000;
     --bg-secondary: #0a0a0a;
     --text-primary: #e0e0e0;
     --text-secondary: #808080;
@@ -8,6 +9,7 @@
     --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* Reset and global styles */
 * {
     margin: 0;
     padding: 0;
@@ -17,7 +19,7 @@
 
 body {
     background: var(--bg-primary);
-    color: #808080;
+    color: var(--text-secondary);
     line-height: 1.7;
     overflow-x: hidden;
     min-height: 100vh;
@@ -29,7 +31,33 @@ body {
     padding: 0 40px;
 }
 
-/* Navigation Styles */
+/* Typography */
+h1 {
+    font-size: 1.8rem;
+    margin-bottom: 3rem;
+    line-height: 1.4;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    color: var(--text-primary);
+}
+
+p {
+    font-size: 1rem;
+    margin-bottom: 1.8rem;
+    letter-spacing: 0.05em;
+}
+
+.emphasis {
+    color: var(--text-primary);
+    font-weight: 400;
+}
+
+a {
+    color: var(--text-primary);
+    text-decoration: underline;
+}
+
+/* Navigation */
 nav {
     position: fixed;
     width: 100%;
@@ -46,9 +74,11 @@ nav {
     padding: 15px 0;
 }
 
-.nav-brand {
-    display: flex;
-    align-items: center;
+/* Logo styles */
+.logo-img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
 }
 
 .brand-link {
@@ -64,17 +94,13 @@ nav {
     opacity: 0.8;
 }
 
-.logo {
-    font-size: 1.5rem;
-    color: var(--accent);
-}
-
 .brand-text {
     font-size: 1.6rem;
     letter-spacing: 0.1em;
     font-weight: 500;
 }
 
+/* Navigation links */
 .nav-links {
     display: flex;
     gap: 50px;
@@ -82,7 +108,7 @@ nav {
 }
 
 .nav-link {
-    color: #808080;
+    color: var(--text-secondary);
     text-decoration: none;
     font-size: 0.85rem;
     letter-spacing: 0.2em;
@@ -154,27 +180,6 @@ nav {
     max-width: 1000px;
     margin: 0 auto;
     width: 100%;
-}
-
-h1 {
-    font-size: 1.8rem;
-    margin-bottom: 3rem;
-    line-height: 1.4;
-    font-weight: 400;
-    letter-spacing: 0.1em;
-    color: var(--text-primary);
-}
-
-p {
-    font-size: 1rem;
-    color: #808080;
-    margin-bottom: 1.8rem;
-    letter-spacing: 0.05em;
-}
-
-.emphasis {
-    color: var(--text-primary);
-    font-weight: 400;
 }
 
 /* Tab Styles */
