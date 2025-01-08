@@ -595,11 +595,16 @@ a {
 
 .register-button {
     display: block;
-    margin: 20px auto 0;
+    margin: 5px auto 0;
     width: fit-content;
 }
 
 .indented-list {
     padding-left: 20px; /* Adjust the value as needed */
+}
+
+.button-container {
+    display: flex;
+    gap: 2px;
 }
  
