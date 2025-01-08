@@ -41,11 +41,11 @@
                 <a href="faq.html" class="nav-link">FAQ</a>
                 <a href="contact.html" class="nav-link">CONTACT</a>
                 <div class="nav-link apply-dropdown">
-                    <button id="applyButton" class="apply-button">APPLY</button>
+                    <button class="apply-button">APPLY</button>
                     <div class="dropdown-content">
-                        <a id="applyOxford" href="https://airtable.com/apptd9PipPIX7aWon/pagjBHac1C8uH7RFs/form" target="_blank">Oxford</a>
-                        <a id="applyCambridge" href="https://airtable.com/appsFSjct9YT7kvGp/pagx4AZ3oOShHmuaG/form" target="_blank">Cambridge</a>
-                        <a id="applyCambridge" href="https://airtable.com/appAPdlWG3sWDpnyf/pag6VGwYMSLYRCM8u/form" target="_blank">London</a>
+                        <a href="https://airtable.com/apptd9PipPIX7aWon/pagjBHac1C8uH7RFs/form" target="_blank" data-location="oxford">Oxford</a>
+                        <a href="https://airtable.com/appsFSjct9YT7kvGp/pagx4AZ3oOShHmuaG/form" target="_blank" data-location="cambridge">Cambridge</a>
+                        <a href="https://airtable.com/appAPdlWG3sWDpnyf/pag6VGwYMSLYRCM8u/form" target="_blank" data-location="london">London</a>
                     </div>
                 </div>
             </div>
@@ -59,9 +59,12 @@
                 <h1 class="applications-notice" style="font-size: 1.5em;">Applications for 2025 close January 16 23:59 AoE.</h1>
 
                 <div class="button-container">
-                    <a id="applyOxford" href="https://airtable.com/apptd9PipPIX7aWon/pagjBHac1C8uH7RFs/form" target="_blank" class="cta-button register-button">Oxford</a>
-                    <a id="applyCambridge" href="https://airtable.com/appsFSjct9YT7kvGp/pagx4AZ3oOShHmuaG/form" target="_blank" class="cta-button register-button">Cambridge</a>
-                    <a id="applyLondon" href="https://airtable.com/appAPdlWG3sWDpnyf/pag6VGwYMSLYRCM8u/form" target="_blank" class="cta-button register-button">London</a>
+                    <a href="https://airtable.com/apptd9PipPIX7aWon/pagjBHac1C8uH7RFs/form" 
+                       target="_blank" 
+                       class="cta-button register-button"
+                       data-location="oxford">Oxford</a>
+                    <a href="https://airtable.com/appsFSjct9YT7kvGp/pagx4AZ3oOShHmuaG/form" target="_blank" class="cta-button register-button">Cambridge</a>
+                    <a href="https://airtable.com/appAPdlWG3sWDpnyf/pag6VGwYMSLYRCM8u/form" target="_blank" class="cta-button register-button">London</a>
                 </div>
                 
                 <div class="tab-container">
@@ -142,48 +145,46 @@
     </main>
 
     <script>
-        function openTab(evt, tabName) {
-            const tabContents = document.getElementsByClassName("tab-content");
-            for (let content of tabContents) {
-                content.classList.remove("active");
-            }
-
-            const tabs = document.getElementsByClassName("tab");
-            for (let tab of tabs) {
-                tab.classList.remove("active");
-            }
-
-            document.getElementById(tabName).classList.add("active");
-            evt.currentTarget.classList.add("active");
-        }
-
-        // Function to track button clicks
-        function trackButtonClick(eventCategory, eventLabel) {
+        // Utility functions
+        const trackEvent = (category, label) => {
             gtag('event', 'click', {
-                'event_category': eventCategory,
-                'event_label': eventLabel,
+                'event_category': category,
+                'event_label': label,
                 'value': 1
             });
-        }
+        };
 
-        // Function to track conversions
-        function trackConversion(conversionLabel) {
+        const trackConversion = (location) => {
             gtag('event', 'conversion', {
-                'send_to': 'AW-16807208314/' + conversionLabel,
+                'send_to': `AW-16807208314/conversion_label_for_${location.toLowerCase()}`,
                 'value': 1.0,
                 'currency': 'GBP'
             });
-        }
+        };
 
-        // Add event listeners to buttons
-        document.getElementById('applyOxford').addEventListener('click', function() {
-            trackButtonClick('Apply', 'Oxford');
-            trackConversion('V_XXCOHRp_IZEPrKps4-'); // Replace with actual conversion label for Oxford
-        });
+        // Tab functionality
+        const openTab = (evt, tabName) => {
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.remove('active');
+            });
 
-        document.getElementById('applyCambridge').addEventListener('click', function() {
-            trackButtonClick('Apply', 'Cambridge');
-            trackConversion('V_XXCOHRp_IZEPrKps4-'); // Replace with actual conversion label for Cambridge
+            document.querySelectorAll('.tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+
+            document.getElementById(tabName).classList.add('active');
+            evt.currentTarget.classList.add('active');
+        };
+
+        // Event listeners
+        document.addEventListener('DOMContentLoaded', () => {
+            // Track application clicks
+            document.querySelectorAll('[data-location]').forEach(button => {
+                button.addEventListener('click', () => {
+                    const location = button.dataset.location;
+                    trackConversion(location);
+                });
+            });
         });
     </script>
 </body>

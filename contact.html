@@ -44,7 +44,8 @@
                     <div class="dropdown-content">
                         <a id="applyOxford" href="https://airtable.com/apptd9PipPIX7aWon/pagjBHac1C8uH7RFs/form" target="_blank">Oxford</a>
                         <a id="applyCambridge" href="https://airtable.com/appsFSjct9YT7kvGp/pagx4AZ3oOShHmuaG/form" target="_blank">Cambridge</a>  
-                        <a id="applyCambridge" href="https://airtable.com/appAPdlWG3sWDpnyf/pag6VGwYMSLYRCM8u/form" target="_blank">London</a>
+                        <a id="applyLondon" href="https://airtable.com/appAPdlWG3sWDpnyf/pag6VGwYMSLYRCM8u/form" target="_blank">London</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -79,12 +80,10 @@
         }
 
         // Add event listeners to buttons
-        document.getElementById('applyOxford').addEventListener('click', function() {
-            trackConversion('conversion_label_for_oxford'); // Replace with actual conversion label for Oxford
-        });
-
-        document.getElementById('applyCambridge').addEventListener('click', function() {
-            trackConversion('conversion_label_for_cambridge'); // Replace with actual conversion label for Cambridge
+        ['applyOxford', 'applyCambridge', 'applyLondon'].forEach(function(id) {
+            document.getElementById(id).addEventListener('click', function() {
+                trackConversion('conversion_label_for_' + id.split('apply')[1].toLowerCase()); // Dynamic conversion label
+            });
         });
     </script>
 </body>
