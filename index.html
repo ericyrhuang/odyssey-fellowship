@@ -57,14 +57,13 @@
             <div class="container hero-content">
                 <h1>A fellowship for the restless. Read about how the world was changed, and meet others who want to change it.</h1>
                 <h1 class="applications-notice" style="font-size: 1.5em;"><em>Applications for 2025 close January 16 23:59 AoE.</em></h1>
-
-                <div class="button-container">
-                    <a href="https://airtable.com/apptd9PipPIX7aWon/pagjBHac1C8uH7RFs/form" 
-                       target="_blank" 
-                       class="cta-button register-button"
-                       data-location="oxford">Oxford</a>
-                    <a href="https://airtable.com/appsFSjct9YT7kvGp/pagx4AZ3oOShHmuaG/form" target="_blank" class="cta-button register-button">Cambridge</a>
-                    <a href="https://airtable.com/appAPdlWG3sWDpnyf/pag6VGwYMSLYRCM8u/form" target="_blank" class="cta-button register-button">London</a>
+                <div class="center-apply-dropdown" style="text-align: center;">
+                    <button class="apply-button large" onclick="toggleDropdown(event)">APPLY</button>
+                    <div class="dropdown-content">
+                        <a href="https://airtable.com/apptd9PipPIX7aWon/pagjBHac1C8uH7RFs/form" target="_blank" data-location="oxford">Oxford</a>
+                        <a href="https://airtable.com/appsFSjct9YT7kvGp/pagx4AZ3oOShHmuaG/form" target="_blank" data-location="cambridge">Cambridge</a>
+                        <a href="https://airtable.com/appAPdlWG3sWDpnyf/pag6VGwYMSLYRCM8u/form" target="_blank" data-location="london">London</a>
+                    </div>
                 </div>
                 
                 <div class="tab-container">
@@ -199,6 +198,22 @@
                 });
             });
         });
+
+        // Function to toggle dropdown visibility
+        const toggleDropdown = (event) => {
+            const dropdown = event.currentTarget.nextElementSibling;
+            dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+        };
+
+        // Close dropdown if clicked outside
+        window.onclick = (event) => {
+            if (!event.target.matches('.apply-button')) {
+                const dropdowns = document.querySelectorAll('.dropdown-content');
+                dropdowns.forEach(dropdown => {
+                    dropdown.style.display = 'none';
+                });
+            }
+        };
     </script>
 </body>
 </html>

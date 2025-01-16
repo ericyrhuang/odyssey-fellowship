@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+
 /* Base styles */
 :root {
     --bg-primary:#000000;
@@ -611,5 +613,61 @@ a {
 .button-container {
     display: flex;
     gap: 2px;
+}
+
+/* Update apply button styles */
+.apply-button {
+    padding: 15px 50px; /* Increased padding for a larger button */
+    font-size: 1.75rem; /* Increased font size for better visibility */
+    font-weight: bold; /* Make the text bold for emphasis */
+    border-radius: 10px; /* Larger border radius for a softer look */
+    transition: background 0.5s ease; /* Transition for background color */
+    background: var(--accent); /* Set a vibrant base color */
+    color: var(--bg-primary); /* Text color */
+    cursor: pointer; /* Change cursor to pointer */
+    font-family: 'Poppins', sans-serif; /* Change to the new font */
+}
+
+.apply-button:hover {
+    background: #ff5722; /* Change to a vibrant color on hover */
+    color: #ffffff; /* Change text color to white on hover */
+}
+
+/* Center the dropdown content */
+.apply-dropdown {
+    text-align: center; /* Center the dropdown */
+}
+
+/* Update dropdown styles for better visibility */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background: var(--bg-secondary);
+    min-width: 200px; /* Increased minimum width */
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    z-index: 1;
+    border: 1px solid var(--accent-dim);
+    border-radius: 5px; /* Larger border radius */
+    margin-top: 5px;
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Adjust position to center */
+}
+
+.dropdown-content a {
+    color: var(--text-primary);
+    padding: 15px 20px; /* Increased padding for dropdown items */
+    text-decoration: none;
+    display: block;
+    transition: var(--transition);
+    text-align: center; /* Center text in dropdown */
+}
+
+.dropdown-content a:hover {
+    background: var(--accent-dim);
+}
+
+/* Remove hover display */
+.apply-dropdown:hover .dropdown-content {
+    display: block;
 }
  
