@@ -617,6 +617,7 @@ a {
 
 /* Update apply button styles */
 .apply-button {
+    text-decoration: none;
     padding: 10px 30px; /* Increased padding for a larger button */
     font-size: 1.25rem; /* Increased font size for better visibility */
     border-radius: 10px; /* Larger border radius for a softer look */
