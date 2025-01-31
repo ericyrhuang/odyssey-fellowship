@@ -618,8 +618,7 @@ a {
 /* Update apply button styles */
 .apply-button {
     padding: 10px 30px; /* Increased padding for a larger button */
-    font-size: 1.5rem; /* Increased font size for better visibility */
-    font-weight: bold; /* Make the text bold for emphasis */
+    font-size: 1.25rem; /* Increased font size for better visibility */
     border-radius: 10px; /* Larger border radius for a softer look */
     transition: background 0.5s ease; /* Transition for background color */
     background: var(--accent); /* Set a vibrant base color */
